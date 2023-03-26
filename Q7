@@ -1,0 +1,25 @@
+class Solution {
+    
+    public void segregateElements(int arr[], int n)
+    {
+        if(n==0 || n==1)
+        return;
+        int[] a = new int[n];
+        int i=0;
+        for(int x=0; x<n; x++){
+            if(arr[x]>=0){
+                a[i]=arr[x];
+                i++;
+            }
+        }
+        for(int x=0;x<n; x++){
+            if(arr[x]<0){
+                a[i]=arr[x];
+                i++;
+            }
+        }
+        for(int x=0; x<n; x++){
+            arr[x]=a[x];
+        }
+    }
+}
