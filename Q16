@@ -1,0 +1,25 @@
+class GfG
+{
+    int max_sum(int A[], int n)
+    {
+        int arr_sum = 0;
+        for(int i=0; i<n; i++){
+            arr_sum += A[i];
+        }
+
+        int cur_sum = 0;
+        for(int i=0; i<n; i++){
+            cur_sum += i*A[i]; 
+        }
+
+        int res = cur_sum;
+
+        for(int i=1; i<n; i++){
+            cur_sum = cur_sum -(arr_sum-A[i-1]) + (A[i-1]*(n-1));
+            if(cur_sum > res){
+                res = cur_sum;
+            }
+        }
+        return res;
+    }	
+}
